@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Plus, RotateCcw, UserPlus } from "lucide-react";
+import { Plus, RotateCcw, UserPlus, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { PlayerCard } from "@/components/PlayerCard";
+import { useNavigate } from "react-router-dom";
 
 interface Player {
   id: number;
@@ -10,7 +11,8 @@ interface Player {
   score: number;
 }
 
-const Index = () => {
+const Capote = () => {
+  const navigate = useNavigate();
   const [players, setPlayers] = useState<Player[]>([]);
   const [newPlayerName, setNewPlayerName] = useState("");
   const [nextId, setNextId] = useState(1);
@@ -47,16 +49,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background px-4 py-6 pb-24">
-      <header className="text-center mb-6">
-        <h1 className="text-2xl font-bold text-foreground">Score Keeper</h1>
-        <p className="text-sm text-muted-foreground mt-1">Tap a name or + to add points</p>
+      <header className="flex items-center mb-6 relative">
+        <Button variant="ghost" size="icon" onClick={() => navigate("/")} className="absolute left-0">
+          <ArrowLeft className="w-6 h-6" />
+        </Button>
+        <div className="w-full text-center">
+          <h1 className="text-2xl font-bold text-foreground">Contador</h1>
+          <p className="text-sm text-muted-foreground mt-1">Toque no nome ou + para adicionar pontos</p>
+        </div>
       </header>
 
       {/* Add Player Form */}
       <div className="flex gap-2 mb-6 max-w-md mx-auto">
         <Input
           type="text"
-          placeholder="Player name"
+          placeholder="Nome do jogador"
           value={newPlayerName}
           onChange={(e) => setNewPlayerName(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -73,10 +80,10 @@ const Index = () => {
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-muted flex items-center justify-center">
             <Plus className="w-8 h-8 text-muted-foreground" />
           </div>
-          <p className="text-muted-foreground">Add players to start</p>
+          <p className="text-muted-foreground">Adicione jogadores para começar</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+        <div className="grid grid-cols-2 gap-3 max-w-2xl mx-auto">
           {players.map((player) => (
             <PlayerCard
               key={player.id}
@@ -100,7 +107,7 @@ const Index = () => {
             className="w-full max-w-md mx-auto h-12 flex items-center justify-center gap-2"
           >
             <RotateCcw className="w-5 h-5" />
-            Reset All Scores
+            Zerar Tudo
           </Button>
         </div>
       )}
@@ -108,4 +115,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Capote;
