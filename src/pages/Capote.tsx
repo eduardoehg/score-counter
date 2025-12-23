@@ -48,11 +48,17 @@ const Capote = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background px-4 py-6 pb-24">
-      <header className="flex items-center mb-6 relative">
-        <Button variant="ghost" size="icon" onClick={() => navigate("/")} className="absolute left-0">
-          <ArrowLeft className="w-6 h-6" />
-        </Button>
+    <div className="min-h-screen bg-background px-4 py-6 pb-24 relative">
+      <Button 
+        variant="ghost" 
+        size="icon" 
+        onClick={() => navigate("/")} 
+        className="absolute top-4 left-4 z-10 hover:bg-accent/50 text-muted-foreground"
+      >
+        <ArrowLeft className="w-6 h-6" />
+      </Button>
+
+      <header className="flex items-center mb-6 justify-center">
         <div className="w-full text-center">
           <h1 className="text-2xl font-bold text-foreground">Contador</h1>
           <p className="text-sm text-muted-foreground mt-1">Toque no nome ou + para adicionar pontos</p>

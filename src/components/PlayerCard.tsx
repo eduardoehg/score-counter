@@ -42,16 +42,14 @@ export function PlayerCard({ name, score, onIncrement, onDecrement, onRemove }: 
       <div className="flex gap-2 mt-4">
         <Button
           variant="secondary"
-          size="lg"
-          className="flex-1 h-12 text-lg"
+          className="flex-1 h-10"
           onClick={onDecrement}
         >
           <Minus className="w-5 h-5" />
         </Button>
         <Button
           variant="default"
-          size="lg"
-          className="flex-1 h-12 text-lg"
+          className="flex-1 h-10"
           onClick={handleIncrement}
         >
           <Plus className="w-5 h-5" />

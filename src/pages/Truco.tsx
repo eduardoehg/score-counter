@@ -69,28 +69,28 @@ const Truco = () => {
       </Button>
 
       {/* Main Game Area */}
-      <div className="flex-1 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-border">
+      <div className="flex-1 flex flex-row divide-x divide-border">
         
         {/* NÓS Column */}
-        <div className={`flex-1 flex flex-col items-center justify-center p-6 relative transition-colors duration-500 ${isWinnerNos ? "bg-primary/10" : "bg-background"}`}>
-          {isWinnerNos && <Trophy className="absolute top-8 text-primary w-12 h-12 animate-bounce" />}
-          <h2 className="text-4xl font-black text-primary mb-8 tracking-wider">NÓS</h2>
+        <div className={`flex-1 flex flex-col items-center justify-center p-2 md:p-6 relative transition-colors duration-500 ${isWinnerNos ? "bg-primary/10" : "bg-background"}`}>
+          {isWinnerNos && <Trophy className="absolute top-8 text-primary w-8 h-8 md:w-12 md:h-12 animate-bounce" />}
+          <h2 className="text-2xl md:text-4xl font-black text-primary mb-4 md:mb-8 tracking-wider">NÓS</h2>
           
-          <div className="text-[10rem] font-bold leading-none mb-12 tabular-nums text-foreground">
+          <div className="text-6xl md:text-[10rem] font-bold leading-none mb-6 md:mb-12 tabular-nums text-foreground">
             {scoreNos}
           </div>
 
-          <div className="flex gap-4 w-full max-w-xs">
+          <div className="flex gap-2 md:gap-4 w-full max-w-xs px-2">
             <Button 
               onClick={() => addPoints("NOS", 1)} 
-              className="flex-1 h-20 text-2xl font-bold bg-primary hover:bg-primary/90"
+              className="flex-1 h-12 md:h-20 text-lg md:text-2xl font-bold bg-primary hover:bg-primary/90"
               disabled={isWinnerNos || isWinnerEles}
             >
               +1
             </Button>
             <Button 
               onClick={() => addPoints("NOS", 3)} 
-              className="flex-1 h-20 text-2xl font-bold bg-primary hover:bg-primary/90"
+              className="flex-1 h-12 md:h-20 text-lg md:text-2xl font-bold bg-primary hover:bg-primary/90"
               disabled={isWinnerNos || isWinnerEles}
             >
               +3
@@ -104,25 +104,25 @@ const Truco = () => {
         </div>
 
         {/* ELES Column */}
-        <div className={`flex-1 flex flex-col items-center justify-center p-6 relative transition-colors duration-500 ${isWinnerEles ? "bg-destructive/10" : "bg-background"}`}>
-          {isWinnerEles && <Trophy className="absolute top-8 text-destructive w-12 h-12 animate-bounce" />}
-          <h2 className="text-4xl font-black text-destructive mb-8 tracking-wider">ELES</h2>
+        <div className={`flex-1 flex flex-col items-center justify-center p-2 md:p-6 relative transition-colors duration-500 ${isWinnerEles ? "bg-destructive/10" : "bg-background"}`}>
+          {isWinnerEles && <Trophy className="absolute top-8 text-destructive w-8 h-8 md:w-12 md:h-12 animate-bounce" />}
+          <h2 className="text-2xl md:text-4xl font-black text-destructive mb-4 md:mb-8 tracking-wider">ELES</h2>
           
-          <div className="text-[10rem] font-bold leading-none mb-12 tabular-nums text-foreground">
+          <div className="text-6xl md:text-[10rem] font-bold leading-none mb-6 md:mb-12 tabular-nums text-foreground">
             {scoreEles}
           </div>
 
-          <div className="flex gap-4 w-full max-w-xs">
+          <div className="flex gap-2 md:gap-4 w-full max-w-xs px-2">
             <Button 
               onClick={() => addPoints("ELES", 1)} 
-              className="flex-1 h-20 text-2xl font-bold bg-destructive hover:bg-destructive/90 text-destructive-foreground shadow-sm"
+              className="flex-1 h-12 md:h-20 text-lg md:text-2xl font-bold bg-destructive hover:bg-destructive/90 text-destructive-foreground shadow-sm"
               disabled={isWinnerNos || isWinnerEles}
             >
               +1
             </Button>
             <Button 
               onClick={() => addPoints("ELES", 3)} 
-              className="flex-1 h-20 text-2xl font-bold bg-destructive hover:bg-destructive/90 text-destructive-foreground shadow-sm"
+              className="flex-1 h-12 md:h-20 text-lg md:text-2xl font-bold bg-destructive hover:bg-destructive/90 text-destructive-foreground shadow-sm"
               disabled={isWinnerNos || isWinnerEles}
             >
               +3
