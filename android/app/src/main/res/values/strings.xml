@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">score-counter</string>
-    <string name="title_activity_main">score-counter</string>
+    <string name="app_name">Score Counter</string>
+    <string name="title_activity_main">Score Counter</string>
     <string name="package_name">com.eduardo.score</string>
     <string name="custom_url_scheme">com.eduardo.score</string>
 </resources>

@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.eduardo.score',
-  appName: 'score-counter',
+  appName: 'Score Counter',
   webDir: 'dist'
 };
 
