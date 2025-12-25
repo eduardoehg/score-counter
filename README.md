@@ -1,73 +1,117 @@
-# Welcome to your Lovable project
+# Score Counter
 
-## Project info
+Aplicativo simples e intuitivo para contagem de pontos em jogos de cartas e tabuleiro.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Platform](https://img.shields.io/badge/platform-android%20%7C%20ios-lightgrey)
 
-## How can I edit this code?
 
-There are several ways of editing your application.
+## 🎯 Visão Geral
 
-**Use Lovable**
+**Score Counter** é um aplicativo mobile desenvolvido para facilitar a contagem de pontos em jogos, oferecendo uma interface simples, rápida e sem distrações. Atualmente suporta modos dedicados para **Truco** e **Capote**, eliminando a necessidade de papel e caneta.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Foi projetado para ser leve, funcionar offline e manter a tela do dispositivo ativa durante a partida para que você não perca nenhum lance.
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📸 Screenshots
 
-**Use your preferred IDE**
+| Tela Inicial | Truco | Capote |
+|-------------|-------|--------|
+| ![](docs/home.png) | ![](docs/truco.png) | ![](docs/capote.png) |
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ✨ Funcionalidades
 
-Follow these steps:
+- **Múltiplos Jogos:** Modos específicos para Truco e Capote.
+- **Interface Intuitiva:** Design limpo e moderno focado na usabilidade.
+- **Keep Awake:** Mantém a tela ligada durante o uso (evita bloqueio).
+- **Funciona Offline:** Não requer conexão com a internet.
+- **Responsivo:** Adaptado para diferentes tamanhos de tela.
+- **Dark Mode:** Interface agradável visualmente (via sistema ou configuração).
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🛠 Tecnologias
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+O projeto foi desenvolvido utilizando as tecnologias mais modernas do ecossistema React e Mobile:
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **Core:** [React](https://react.dev/) + [Vite](https://vitejs.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **UI/Estilos:** [Tailwind CSS](https://tailwindcss.com/) + [Shadcn UI](https://ui.shadcn.com/)
+- **Mobile:** [Capacitor](https://capacitorjs.com/) (Integração nativa iOS/Android)
+- **Gerenciamento de Estado/Dados:** TanStack Query
+- **Ícones:** Lucide React
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## 📂 Estrutura do Projeto
+
+```bash
+src/
+ ├─ components/     # Componentes reutilizáveis (UI Kit)
+ ├─ hooks/          # Custom Hooks (Lógica compartilhada)
+ ├─ lib/            # Utilitários e configurações (utils)
+ ├─ pages/          # Telas do aplicativo (Home, Truco, Capote)
+ ├─ App.tsx         # Componente raiz e rotas
+ └─ main.tsx        # Ponto de entrada
 ```
 
-**Edit a file directly in GitHub**
+## ▶️ Como Executar
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Pré-requisitos
+- Node.js instalado (versão 18 ou superior recomendada)
+- NPM ou Yarn
 
-**Use GitHub Codespaces**
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/eduardoehg/score-counter.git
+   cd score-counter
+   ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+2. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-## What technologies are used for this project?
+3. **Execute o projeto (Modo Desenvolvimento Web):**
+   ```bash
+   npm run dev
+   ```
 
-This project is built with:
+## 📦 Build / Distribuição
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Para gerar a versão nativa (Android/iOS) utilizando Capacitor:
 
-## How can I deploy this project?
+1. **Gere o build web:**
+   ```bash
+   npm run build
+   ```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+2. **Sincronize com os projetos nativos:**
+   ```bash
+   npx cap sync
+   ```
 
-## Can I connect a custom domain to my Lovable project?
+3. **Abra no Android Studio:**
+   ```bash
+   npx cap open android
+   ```
 
-Yes, you can!
+## 🗺 Roadmap
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- [ ] Histórico de partidas salvas localmente
+- [ ] Voz do narrador para pontuação (Truco)
+- [ ] Modo multiplayer local (Wi-Fi/Bluetooth)
+- [ ] Temas personalizados
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir **issues** para relatar bugs ou sugerir novas funcionalidades, e **pull requests** para melhorias diretas no código.
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
+Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## 👤 Autor
+
+Desenvolvido por **Eduardo**  
+🔗 GitHub: https://github.com/eduardoehg
